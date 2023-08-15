@@ -62,13 +62,13 @@ const Diary: React.FC = () => {
                 </form>
             </div>
             <div className="flex flex-col md:flex-row flex-wrap my-8 gap-4 lg:gap-10">
+                {stories.length===0 && <div className="max-w-full max-h-full bg-cover"><img className="max-w-full max-h-full opacity-20" src="/empty.svg" alt="Empty Diary"/></div>}
                 <InfiniteScroll
                     dataLength={stories.length}
                     next={() => fetchStories(cursor)}
                     hasMore={hasMore}
                     loader={<h4 className="w-full text-center">Loading...</h4>}
                     className="flex flex-col md:flex-row flex-wrap my-8 gap-4 lg:gap-10"
-                    endMessage={<hr className="mt-6 w-full" />}
                 >
                     {stories.map((story: any, index: number) => {
                         return <DiaryCard key={index} id={story.node.id} date={story.node.createdAt} tag={story.node.tag} content={story.node.content} filter={filter} />
