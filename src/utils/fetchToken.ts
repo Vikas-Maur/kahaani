@@ -1,5 +1,5 @@
 const fetchToken = async () => {
-    const resp = await fetch('/api/auth/token')
+    const resp = await fetch('/api/token')
    
     return await resp.json()
 }
