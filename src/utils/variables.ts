@@ -1,0 +1,1 @@
+export const TAGS = [['VERY_SAD', 'Very sad'], ['SAD', 'Sad'], ['NEUTRAL', 'Neutral'], ['HAPPY', 'Happy'], ['VERY_HAPPY', 'Very Happy']]
