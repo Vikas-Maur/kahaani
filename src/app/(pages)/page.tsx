@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         </p>
         <button
           onClick={() => signIn()}
-          className="mt-auto mb-10 lg:mb-0 lg:mt-0 block p-4 w-full  lg:w-3/4 text-xl text-white font-bold text-center rounded bg-mypink hover:bg-mypink/80"
+          className="mb-16 lg:mb-0 lg:mt-0 block p-4 w-full  lg:w-3/4 text-xl text-white font-bold text-center rounded bg-mypink hover:bg-mypink/80"
         >
           Open Your Diary &rarr;
         </button>
