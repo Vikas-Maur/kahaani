@@ -8,7 +8,7 @@ export default function StoryPage({ params }: { params: { id: string } }) {
 
     return (
         <section className="mt-4">
-            <Navbar />
+            <Navbar active="diary" />
             <React.Suspense fallback={"loading..."}>
                 <StoryBlog id={params.id} />
             </React.Suspense>

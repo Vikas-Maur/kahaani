@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import getStory from "@/utils/getStory"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
@@ -9,6 +9,7 @@ type Props = {
 }
 
 const StoryBlog: React.FC<Props> = ({ id }) => {
+    const articleRef: any = useRef()
     const router = useRouter()
     const [story, setStory] = useState<any>({
         createdAt: null,
@@ -36,7 +37,7 @@ const StoryBlog: React.FC<Props> = ({ id }) => {
     }, [id])
 
     useEffect(() => {
-        document.getElementById("story").innerText = story.content
+        articleRef.current.innerText = story.content
     }, [story])
 
     return (
@@ -49,7 +50,7 @@ const StoryBlog: React.FC<Props> = ({ id }) => {
                 <p>Created on <span className="text-gray-300">{story.createdAt}</span></p>
                 <p className="px-3 py-1 rounded-full bg-darkest">#{story.tag}</p>
             </div>
-            <article id="story" className="prose prose-invert text-gray-400 my-3">
+            <article ref={articleRef} id="story" className="prose prose-invert text-gray-400 my-3">
             </article>
             {story.images.length === 0 ? "" : <div className="mt-16">
                 <h2 className="text-2xl font-bold">Your Moments</h2>
