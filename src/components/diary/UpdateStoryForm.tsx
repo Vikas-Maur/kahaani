@@ -51,7 +51,7 @@ const UpdateStoryForm: React.FC<Props> = ({ id }) => {
                 images: story.images
             })
         })()
-    }, [])
+    }, [id])
 
 
     return (
@@ -64,7 +64,7 @@ const UpdateStoryForm: React.FC<Props> = ({ id }) => {
                 <label className="block" htmlFor="tag">How was your day?</label>
                 <select className="bg-dark" required name="tag" id="tag" value={formData.tag} onChange={(e) => { setFormData((prev) => ({ ...prev, tag: e.target.value })) }} >
                     {TAGS.map((value, i) => {
-                        return <option value={value[0]}>{value[1]}</option>
+                        return <option key={i} value={value[0]}>{value[1]}</option>
                     })}
                 </select>
             </div>
@@ -73,7 +73,7 @@ const UpdateStoryForm: React.FC<Props> = ({ id }) => {
                 <CldUploadButton onUpload={imageUploaded} uploadPreset="xhwzkgqc" className="px-5 py-4 rounded-full bg-dark">Choose file</CldUploadButton>
                 <div className="flex gap-6 flex-wrap mt-3">
                     {formData.images.map((image, i) => {
-                        return <div className="w-full max-w-xs max-h-[20rem] rounded bg-cover bg-dark relative" key={i}><img src={image} alt={image} /><button onClick={() => removeImage(i)} className="px-5 py-2 rounded bg-dark hover:bg-darkest z-10 absolute top-0 right-0">X</button></div>
+                        return <div key={i} className="w-full max-w-xs max-h-[20rem] rounded bg-cover bg-dark relative"><img src={image} alt={image} /><button onClick={() => removeImage(i)} className="px-5 py-2 rounded bg-dark hover:bg-darkest z-10 absolute top-0 right-0">X</button></div>
                     })}
                 </div>
             </div>

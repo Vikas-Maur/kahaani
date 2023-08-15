@@ -33,7 +33,7 @@ const StoryBlog: React.FC<Props> = ({ id }) => {
                 tag: story.tag.toLowerCase()
             })
         })()
-    }, [])
+    }, [id])
 
     useEffect(() => {
         document.getElementById("story").innerText = story.content

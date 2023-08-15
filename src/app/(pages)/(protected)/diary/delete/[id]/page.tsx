@@ -20,7 +20,7 @@ export default function DeleteStoryPage({ params }: { params: { id: string } }) 
                 toast.error(error.message, { id: toastId })
             }
         })()
-    }, [])
+    }, [params.id, router])
 
 
 

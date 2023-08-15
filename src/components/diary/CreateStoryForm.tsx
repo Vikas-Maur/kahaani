@@ -4,11 +4,9 @@ import createStory from "@/utils/createStory"
 import { toast } from "react-hot-toast"
 import { useRouter } from "next/navigation"
 import { TAGS } from "@/utils/variables"
-import { useSession } from "next-auth/react"
 import { CldUploadButton } from 'next-cloudinary';
 
 const CreateStoryForm: React.FC = () => {
-    const { data: session } = useSession()
     const router = useRouter()
     const [formData, setFormData] = useState<{ content: string, tag: string, images: Array<string> }>({
         content: "",
