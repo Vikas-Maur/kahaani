@@ -21,10 +21,10 @@ const Home: React.FC = () => {
           alt="Story Illustration SVG"
         />
       </div>
-      <div className="fixed top-0 left-0 w-screen h-screen lg:hidden z-10 opacity-30">
+      <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center lg:hidden z-10 opacity-30">
         <img
           src="/story-illustration.svg"
-          className="max-w-full max-h-full"
+          className="max-w-full max-h-full block"
           alt="Story Illustration SVG"
         />
       </div>

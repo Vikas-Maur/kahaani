@@ -6,10 +6,8 @@ const getAllStories = async (cursor: string | null | undefined) => {
       edges {
         node {
           content
-          images
           tag
           id
-          updatedAt
           createdAt
         }
         cursor
@@ -26,10 +24,8 @@ const getAllStories = async (cursor: string | null | undefined) => {
         edges {
           node {
             content
-            images
             tag
             id
-            updatedAt
             createdAt
           }
           cursor
@@ -46,7 +42,7 @@ const getAllStories = async (cursor: string | null | undefined) => {
   if (cursor) data = await executeQuery(query, { cursor })
   else data = await executeQuery(query)
 
-  return { edges: data.storyCollection.edges, pageInfo: data.storyCollection.pageInfo }
+  return { edges: data?.storyCollection.edges || [], pageInfo: data?.storyCollection.pageInfo || [] }
 }
 
 export default getAllStories

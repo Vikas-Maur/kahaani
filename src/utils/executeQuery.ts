@@ -16,6 +16,8 @@ const executeQuery = async (query: string, variables: any = undefined) => {
         })
         const { data } = await resp.json()
 
+        console.log('executeQuery', data, config);
+        
         return data
     } catch (error) {
         console.log('executeQuery: ', error);
