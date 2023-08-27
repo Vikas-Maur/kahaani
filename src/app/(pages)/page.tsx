@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         />
       </div>
       <div className="flex flex-col gap-10 mx-auto flex-1 p-8 justify-center items-center z-20">
-        <div>
+        <div className="mt-auto lg:mt-0">
           <img src="/kahaani-logo.svg" alt="Kahani Logo" />
         </div>
         <p className="text-xl text-gray-400">
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         </p>
         <button
           onClick={() => signIn()}
-          className="block p-4 w-full lg:w-3/4 text-xl text-white font-bold text-center rounded bg-mypink hover:bg-mypink/80"
+          className="mb-16 lg:mb-0 lg:mt-0 block p-4 w-full  lg:w-3/4 text-xl text-white font-bold text-center rounded bg-mypink hover:bg-mypink/80"
         >
           Open Your Diary &rarr;
         </button>

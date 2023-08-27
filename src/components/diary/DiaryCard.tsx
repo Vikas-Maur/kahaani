@@ -42,7 +42,7 @@ const DiaryCard: React.FC<Props> = ({ content, date, tag, id, filter }) => {
                     </div>
                 </div>
             </Link>
-            <div className="absolute top-0 right-0 -translate-x-2 translate-y-2 z-10">
+            <div className="absolute top-0 right-0 -translate-x-3 lg:-translate-x-2 translate-y-2 z-10">
                 <button onClick={toggleMenu} className="rounded px-2 py-1 bg-darkest hover:bg-darkest/50 block ml-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-more-horizontal"><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" /></svg>
                 </button>

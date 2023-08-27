@@ -2,6 +2,7 @@
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 
 const ProfilePage: React.FC = () => {
     const { data: session } = useSession()
@@ -10,8 +11,8 @@ const ProfilePage: React.FC = () => {
         <section className="mt-4 lg:mt-4 flex justify-center items-center lg:justify-start">
             <Navbar active="profile" />
             <div className="flex flex-col lg:flex-row p-4 gap-4 lg:gap-16">
-                <div className="w-full max-w-xs bg-cover rounded">
-                    <img src={session?.user?.image || ""} className="max-w-full" alt="User Image" />
+                <div className="w-full max-w-xs bg-cover rounded text-myyellow">
+                    <img src={session?.user?.image || "/user.svg"} className="max-w-full" alt="User Image" />
                 </div>
                 <div className="flex flex-col gap-8">
                     <div className="flex flex-col">

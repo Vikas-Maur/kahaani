@@ -3,7 +3,7 @@ import config from "@/config/config";
 
 const executeQuery = async (query: string, variables: any = undefined) => {
     try {
-        const { token } = await fetchToken()
+        const { token, error } = await fetchToken()
         const resp = await fetch(config.grafbaseURL!, {
             method: "POST",
             headers: {
@@ -15,8 +15,9 @@ const executeQuery = async (query: string, variables: any = undefined) => {
             })
         })
         const { data } = await resp.json()
-        console.log('executeQuery: ', query, variables, data);
 
+        console.log('executeQuery', data, config);
+        
         return data
     } catch (error) {
         console.log('executeQuery: ', error);
